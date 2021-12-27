@@ -39,16 +39,16 @@ public class PizzaShopService {
     // TODO - public List<Pizza> getPizzas() {}
 
     public List<Pizza> getPizzas(){
-        List<Pizza> pizzasAdapteList = new ArrayList<Pizza>();
+        List<Pizza> pizzasAdapterList = new ArrayList<Pizza>();
     	List<DamenosPizza> damenosPizzas = damenosService.getPizzas();
     	List<PizzaHotPizza> pizzaHotPizzas = pizzaHotService.getPizzas();
     	
     	for (DamenosPizza damenosPizza: damenosPizzas ) {
-    		pizzasAdapteList.add(new DamenosAdapter(damenosPizza));
+    		pizzasAdapterList.add(new DamenosAdapter(damenosPizza));
     	}
     	for (PizzaHotPizza pizzaHotPizza: pizzaHotPizzas ) {
-    		pizzasAdapteList.add(new PizzahotAdapter(pizzaHotPizza));
+    		pizzasAdapterList.add(new PizzahotAdapter(pizzaHotPizza));
     	}
-    	return pizzasAdapteList;
+    	return pizzasAdapterList;
     }
 }
